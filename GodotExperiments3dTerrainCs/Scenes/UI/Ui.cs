@@ -8,13 +8,13 @@ namespace GodotExperiments.Terrain3DCSharp.Ui;
 
 public static class ButtonExtensions
 {
-  public static OptionButton WithOptions<TEnum>(this OptionButton button) where TEnum : Enum
+  public static OptionButton WithOptions<TEnum>(this OptionButton button) where TEnum : Enum, IComparable<int>
   {
     var enumValues = Enum.GetValues(typeof(TEnum)).Cast<TEnum>();
 
     for (var i = 0; i < enumValues.Count(); i++)
     {
-      button.AddItem(Enum.GetName(typeof(TEnum), enumValues.ElementAt(i)), i);
+      button.AddItem(Enum.GetName(typeof(TEnum), enumValues.ElementAt(i)), (int)(object)enumValues.ElementAt(i));
     }
 
     button.ForceUpdateTransform();
