@@ -1,0 +1,344 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsyieh5vyrf7v"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Ui.cs" id="1_rr5ke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hohyp"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+
+[node name="UI" type="Panel"]
+anchors_preset = -1
+anchor_right = 0.273
+anchor_bottom = 1.0
+offset_right = -0.700012
+offset_bottom = 1.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hohyp")
+script = ExtResource("1_rr5ke")
+
+[node name="NoisePanel" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.048
+offset_bottom = 37.352
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="NoiseType" type="HBoxContainer" parent="NoisePanel"]
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseType"]
+layout_mode = 2
+text = "TYPE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="NoisePanel/NoiseType"]
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 0
+
+[node name="NoiseSeed" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseSeed"]
+layout_mode = 2
+text = "SEED"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseSeed"]
+layout_mode = 2
+size_flags_horizontal = 10
+value = 8.0
+alignment = 2
+
+[node name="NoiseFreq" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseFreq"]
+layout_mode = 2
+text = "FREQUENCY"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseFreq"]
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.001
+value = 0.01
+alignment = 2
+
+[node name="NoiseFractalType" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseFractalType"]
+layout_mode = 2
+text = "FRACTAL TYPE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="NoisePanel/NoiseFractalType"]
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 0
+
+[node name="NoiseFractalLacunarity" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseFractalLacunarity"]
+layout_mode = 2
+text = "FRACTAL LACUNARITY"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseFractalLacunarity"]
+layout_mode = 2
+size_flags_horizontal = 10
+value = 2.0
+alignment = 2
+
+[node name="NoiseFractalGain" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseFractalGain"]
+layout_mode = 2
+text = "FRACTAL GAIN"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseFractalGain"]
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.01
+value = 0.5
+alignment = 2
+
+[node name="NoiseFractalWeightedStress" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseFractalWeightedStress"]
+layout_mode = 2
+text = "FRACTAL WEIGHTED STRESS"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseFractalWeightedStress"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+
+[node name="NoiseCellularFunction" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseCellularFunction"]
+layout_mode = 2
+text = "CELLULAR FUNCTION"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="NoisePanel/NoiseCellularFunction"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+selected = 0
+
+[node name="NoiseCellularJitter" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseCellularJitter"]
+layout_mode = 2
+text = "CELLULAR JITTER"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseCellularJitter"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+
+[node name="NoiseCellularReturn" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseCellularReturn"]
+layout_mode = 2
+text = "CELLULAR RETURN"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="NoisePanel/NoiseCellularReturn"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+selected = 0
+
+[node name="NoiseDomainWarpEnabled" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpEnabled"]
+layout_mode = 2
+text = "DOMAIN WARP"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="CheckBox" parent="NoisePanel/NoiseDomainWarpEnabled"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+
+[node name="NoiseDomainWarpType" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpType"]
+layout_mode = 2
+text = "DOMAIN WARP TYPE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="NoisePanel/NoiseDomainWarpType"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+selected = 0
+
+[node name="NoiseDomainWarpAmplitude" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpAmplitude"]
+layout_mode = 2
+text = "DOMAIN WARP AMPLITUDE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseDomainWarpAmplitude"]
+layout_mode = 2
+size_flags_horizontal = 10
+value = 30.0
+alignment = 2
+
+[node name="NoiseDomainWarpFreq" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpFreq"]
+layout_mode = 2
+text = "DOMAIN WARP FREQUENCY"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseDomainWarpFreq"]
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.001
+value = 0.05
+alignment = 2
+
+[node name="NoiseDomainWarpFractalType" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpFractalType"]
+layout_mode = 2
+text = "DOMAIN WARP FRACTAL TYPE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="OptionButton" parent="NoisePanel/NoiseDomainWarpFractalType"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+selected = 0
+
+[node name="NoiseDomainWarpFractalOctave" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpFractalOctave"]
+layout_mode = 2
+text = "DOMAIN WARP FRACTAL OCTAVE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseDomainWarpFractalOctave"]
+layout_mode = 2
+size_flags_horizontal = 10
+step = 0.001
+value = 5.0
+alignment = 2
+
+[node name="NoiseDomainWarpFractalLacunarity" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpFractalLacunarity"]
+layout_mode = 2
+text = "DOMAIN WARP FRACTAL LACUNARITY"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseDomainWarpFractalLacunarity"]
+layout_mode = 2
+size_flags_horizontal = 10
+step = 0.001
+value = 6.0
+alignment = 2
+
+[node name="NoiseDomainWarpFractalGain" type="HBoxContainer" parent="NoisePanel"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="NoisePanel/NoiseDomainWarpFractalGain"]
+layout_mode = 2
+text = "DOMAIN WARP FRACTAL GAIN"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="NoisePanel/NoiseDomainWarpFractalGain"]
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.001
+value = 0.5
+alignment = 2
+
+[node name="GenerateTerrain" type="Button" parent="NoisePanel"]
+layout_mode = 2
+text = "GENERATE"
+
+[connection signal="pressed" from="NoisePanel/GenerateTerrain" to="." method="OnUiUpdate"]
