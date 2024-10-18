@@ -14,7 +14,7 @@ public static class ButtonExtensions
 
     for (var i = 0; i < enumValues.Count(); i++)
     {
-      button.AddItem(Enum.GetName(typeof(TEnum), enumValues.ElementAt(i)), (int)(object)enumValues.ElementAt(i));
+      button.AddItem(Enum.GetName(typeof(TEnum), enumValues.ElementAt(i)), Convert.ToInt32(enumValues.ElementAt(i)));
     }
 
     button.ForceUpdateTransform();

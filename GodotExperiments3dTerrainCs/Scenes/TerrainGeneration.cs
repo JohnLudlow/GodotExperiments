@@ -19,6 +19,8 @@ public partial class TerrainGeneration : Node
   public override void _Ready()
   {
     base._Ready();
+    InitialMeshInstance.Visible = false;
+
     AddChild(ActiveMeshInstance);
   }
 
