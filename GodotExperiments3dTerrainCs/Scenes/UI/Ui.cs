@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 using Godot;
 
@@ -10,11 +9,9 @@ public static class ButtonExtensions
 {
   public static OptionButton WithOptions<TEnum>(this OptionButton button) where TEnum : Enum
   {
-    var enumValues = Enum.GetValues(typeof(TEnum)).Cast<TEnum>();
-
-    for (var i = 0; i < enumValues.Count(); i++)
+    foreach (var enumValue in Enum.GetValues(typeof(TEnum)).Cast<TEnum>())
     {
-      button.AddItem(Enum.GetName(typeof(TEnum), enumValues.ElementAt(i)), Convert.ToInt32(enumValues.ElementAt(i)));
+      button.AddItem(Enum.GetName(typeof(TEnum), enumValue), Convert.ToInt32(enumValue));
     }
 
     button.ForceUpdateTransform();
