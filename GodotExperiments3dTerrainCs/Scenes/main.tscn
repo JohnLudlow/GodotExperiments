@@ -51,7 +51,6 @@ InitialMeshInstance = NodePath("TerrainMesh")
 MeshNoise = SubResource("FastNoiseLite_dbjc6")
 
 [node name="TerrainMesh" type="MeshInstance3D" parent="TerrainGeneration"]
-visible = false
 mesh = SubResource("PlaneMesh_yeu64")
 skeleton = NodePath("../..")
 

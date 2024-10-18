@@ -8,7 +8,7 @@ namespace GodotExperiments.Terrain3DCSharp.Ui;
 
 public static class ButtonExtensions
 {
-  public static OptionButton WithOptions<TEnum>(this OptionButton button) where TEnum : Enum, IComparable<int>
+  public static OptionButton WithOptions<TEnum>(this OptionButton button) where TEnum : Enum
   {
     var enumValues = Enum.GetValues(typeof(TEnum)).Cast<TEnum>();
 
