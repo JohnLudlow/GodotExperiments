@@ -66,7 +66,7 @@ public partial class Ui : Panel
 
     _noiseCellularFunctionControl         ??= GetNode<OptionButton>("NoisePanel/NoiseCellularFunction/Value").WithOptions<FastNoiseLite.CellularDistanceFunctionEnum>();
     _noiseCellularJitterControl           ??= GetNode<SpinBox>("NoisePanel/NoiseCellularJitter/Value");
-    _noiseCellularReturnControl           ??= GetNode<OptionButton>("NoisePanel/NoiseCellularReturn/Value");
+    _noiseCellularReturnControl           ??= GetNode<OptionButton>("NoisePanel/NoiseCellularReturn/Value").WithOptions<FastNoiseLite.CellularReturnTypeEnum>();
 
     _noiseDomainWarpEnabledControl        ??= GetNode<CheckBox>("NoisePanel/NoiseDomainWarpEnabled/Value");
     _noiseDomainWarpTypeControl           ??= GetNode<OptionButton>("NoisePanel/NoiseDomainWarpType/Value").WithOptions<FastNoiseLite.DomainWarpFractalTypeEnum>();
