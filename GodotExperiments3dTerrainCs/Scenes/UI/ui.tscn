@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsyieh5vyrf7v"]
 
-[ext_resource type="Script" path="res://Scenes/UI/Ui.cs" id="1_rr5ke"]
+[ext_resource type="Script" uid="uid://jj6ygmwlgmim" path="res://Scenes/UI/Ui.cs" id="1_rr5ke"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hohyp"]
 content_margin_left = 5.0
@@ -22,8 +22,8 @@ script = ExtResource("1_rr5ke")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.048
-offset_bottom = 37.352
+anchor_bottom = 0.595
+offset_bottom = -619.595
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
@@ -40,7 +40,6 @@ vertical_alignment = 1
 [node name="Value" type="OptionButton" parent="NoisePanel/NoiseType"]
 layout_mode = 2
 size_flags_horizontal = 10
-selected = 0
 
 [node name="NoiseSeed" type="HBoxContainer" parent="NoisePanel"]
 custom_minimum_size = Vector2(5, 5)
@@ -92,7 +91,6 @@ vertical_alignment = 1
 [node name="Value" type="OptionButton" parent="NoisePanel/NoiseFractalType"]
 layout_mode = 2
 size_flags_horizontal = 10
-selected = 0
 
 [node name="NoiseFractalLacunarity" type="HBoxContainer" parent="NoisePanel"]
 custom_minimum_size = Vector2(5, 5)
@@ -161,7 +159,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 10
 alignment = 2
-selected = 0
 
 [node name="NoiseCellularJitter" type="HBoxContainer" parent="NoisePanel"]
 custom_minimum_size = Vector2(5, 5)
@@ -194,7 +191,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 10
 alignment = 2
-selected = 0
 
 [node name="NoiseDomainWarpEnabled" type="HBoxContainer" parent="NoisePanel"]
 custom_minimum_size = Vector2(5, 5)
@@ -227,7 +223,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 10
 alignment = 2
-selected = 0
 
 [node name="NoiseDomainWarpAmplitude" type="HBoxContainer" parent="NoisePanel"]
 custom_minimum_size = Vector2(5, 5)
@@ -280,7 +275,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 10
 alignment = 2
-selected = 0
 
 [node name="NoiseDomainWarpFractalOctave" type="HBoxContainer" parent="NoisePanel"]
 custom_minimum_size = Vector2(5, 5)

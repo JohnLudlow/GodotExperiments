@@ -80,28 +80,28 @@ public partial class Ui : Panel
 
   public void OnUiUpdate()
   {
-    TerrainGeneration.MeshNoise.NoiseType                    = (FastNoiseLite.NoiseTypeEnum)_noiseTypeControl.Selected;
-    TerrainGeneration.MeshNoise.Seed                         = (int)_noiseSeedControl.Value;
-    TerrainGeneration.MeshNoise.Frequency                    = (float)_noiseFreqControl.Value;
+    // TerrainGeneration.MeshNoise.NoiseType                    = (FastNoiseLite.NoiseTypeEnum)_noiseTypeControl.Selected;
+    // TerrainGeneration.MeshNoise.Seed                         = (int)_noiseSeedControl.Value;
+    // TerrainGeneration.MeshNoise.Frequency                    = (float)_noiseFreqControl.Value;
 
-    TerrainGeneration.MeshNoise.FractalType                  = (FastNoiseLite.FractalTypeEnum)_noiseFractalTypeControl.Selected;
-    TerrainGeneration.MeshNoise.FractalLacunarity            = (float)_noiseFractalLacControl.Value;
-    TerrainGeneration.MeshNoise.FractalGain                  = (float)_noiseFractalGainControl.Value;
-    TerrainGeneration.MeshNoise.FractalWeightedStrength      = (float)_noiseFractalWeightedStressControl.Value;
+    // TerrainGeneration.MeshNoise.FractalType                  = (FastNoiseLite.FractalTypeEnum)_noiseFractalTypeControl.Selected;
+    // TerrainGeneration.MeshNoise.FractalLacunarity            = (float)_noiseFractalLacControl.Value;
+    // TerrainGeneration.MeshNoise.FractalGain                  = (float)_noiseFractalGainControl.Value;
+    // TerrainGeneration.MeshNoise.FractalWeightedStrength      = (float)_noiseFractalWeightedStressControl.Value;
 
-    TerrainGeneration.MeshNoise.CellularDistanceFunction     = (FastNoiseLite.CellularDistanceFunctionEnum)_noiseCellularFunctionControl.Selected;
-    TerrainGeneration.MeshNoise.CellularJitter               = (float)_noiseCellularJitterControl.Value;
-    TerrainGeneration.MeshNoise.CellularReturnType           = (FastNoiseLite.CellularReturnTypeEnum)_noiseCellularReturnControl.Selected;
+    // TerrainGeneration.MeshNoise.CellularDistanceFunction     = (FastNoiseLite.CellularDistanceFunctionEnum)_noiseCellularFunctionControl.Selected;
+    // TerrainGeneration.MeshNoise.CellularJitter               = (float)_noiseCellularJitterControl.Value;
+    // TerrainGeneration.MeshNoise.CellularReturnType           = (FastNoiseLite.CellularReturnTypeEnum)_noiseCellularReturnControl.Selected;
 
-    TerrainGeneration.MeshNoise.DomainWarpEnabled            = _noiseDomainWarpEnabledControl.ButtonPressed;
-    TerrainGeneration.MeshNoise.DomainWarpType               = (FastNoiseLite.DomainWarpTypeEnum)_noiseDomainWarpTypeControl.Selected;
-    TerrainGeneration.MeshNoise.DomainWarpAmplitude          = (float)_noiseDomainWarpAmplitudeControl.Value;
-    TerrainGeneration.MeshNoise.DomainWarpFrequency          = (float)_noiseDomainWarpFrequencyControl.Value;
+    // TerrainGeneration.MeshNoise.DomainWarpEnabled            = _noiseDomainWarpEnabledControl.ButtonPressed;
+    // TerrainGeneration.MeshNoise.DomainWarpType               = (FastNoiseLite.DomainWarpTypeEnum)_noiseDomainWarpTypeControl.Selected;
+    // TerrainGeneration.MeshNoise.DomainWarpAmplitude          = (float)_noiseDomainWarpAmplitudeControl.Value;
+    // TerrainGeneration.MeshNoise.DomainWarpFrequency          = (float)_noiseDomainWarpFrequencyControl.Value;
 
-    TerrainGeneration.MeshNoise.DomainWarpFractalType        = (FastNoiseLite.DomainWarpFractalTypeEnum)_noiseDomainWarpFractalTypeControl.Selected;
-    TerrainGeneration.MeshNoise.DomainWarpFractalOctaves     = (int)_noiseDomainWarpFractalOctaveControl.Value;
-    TerrainGeneration.MeshNoise.DomainWarpFractalLacunarity  = (float)_noiseDomainWarpFractalLacControl.Value;
-    TerrainGeneration.MeshNoise.DomainWarpFractalGain        = (float)_noiseDomainWarpFractalGainControl.Value;
-    TerrainGeneration.GenerateMesh();
+    // TerrainGeneration.MeshNoise.DomainWarpFractalType        = (FastNoiseLite.DomainWarpFractalTypeEnum)_noiseDomainWarpFractalTypeControl.Selected;
+    // TerrainGeneration.MeshNoise.DomainWarpFractalOctaves     = (int)_noiseDomainWarpFractalOctaveControl.Value;
+    // TerrainGeneration.MeshNoise.DomainWarpFractalLacunarity  = (float)_noiseDomainWarpFractalLacControl.Value;
+    // TerrainGeneration.MeshNoise.DomainWarpFractalGain        = (float)_noiseDomainWarpFractalGainControl.Value;
+    // TerrainGeneration.GenerateMesh();
   }
 }
