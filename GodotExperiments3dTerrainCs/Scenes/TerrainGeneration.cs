@@ -1,50 +1,42 @@
 using Godot;
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace GodotExperiments.Terrain3DCSharp;
 
 [Tool]
 public partial class TerrainGeneration : Node
 {
-  readonly Random _rng = new();
-
   [Export]
   public MeshInstance3D InitialMeshInstance { get; set; }
 
-  public MeshInstance3D ActiveMeshInstance { get; set; } = new MeshInstance3D();
 
   [Export]
-  public TerrainClassBase TerrainConfig { get; set; }
-
-  [Export]
-  public TerrainClassBase[] TerrainClasses { get; set; }
+  public Node[] TerrainClasses { get; set; }
 
   public override void _Ready()
   {
     base._Ready();
     InitialMeshInstance.Visible = false;
 
-    AddChild(ActiveMeshInstance);
-
-    if (Engine.IsEditorHint())
-    {
-      GenerateMesh();
-    }
+    GenerateMesh();
   }
 
   public void GenerateMesh()
   {
     foreach (var item in TerrainClasses)
     {
-      GenerateMesh(item);
+      GD.Print(item);
+
+      if (item is TerrainClassBase t)
+      {
+        AddChild(GenerateMesh(t));
+      }
     }
   }
 
-  public void GenerateMesh(TerrainClassBase terrainClassParameters)
+  public MeshInstance3D GenerateMesh(TerrainClassBase terrainClass)
   {
     var surfaceTool = new SurfaceTool();
     var meshDataTool = new MeshDataTool();
@@ -58,7 +50,7 @@ public partial class TerrainGeneration : Node
     for (var i = 0; i < meshDataTool.GetVertexCount() - 1; i++)
     {
       var vertex = meshDataTool.GetVertex(i);
-      vertex.Y = GetNoiseY(terrainClassParameters, vertex.X, vertex.Z) ?? -1;
+      vertex.Y = GetNoiseY(terrainClass, vertex.X, vertex.Z) ?? -1;
       meshDataTool.SetVertex(i, vertex);
     }
 
@@ -69,10 +61,15 @@ public partial class TerrainGeneration : Node
     surfaceTool.CreateFrom(arrayPlane, 0);
     surfaceTool.GenerateNormals();
 
-    ActiveMeshInstance.Mesh = surfaceTool.Commit();
-    ActiveMeshInstance.CreateTrimeshCollision();
+    var newMeshInstance = new MeshInstance3D
+    {
+      Mesh = surfaceTool.Commit(),
+      Visible = true
+    };
+    newMeshInstance.CreateTrimeshCollision();
+
+    return newMeshInstance;
   }
 
-  private static float? GetNoiseY(TerrainClassBase terrainClassParameters, float x, float y) 
-    => terrainClassParameters?.FastNoiseLite?.GetNoise2D(x, y) * 50;
+  private float? GetNoiseY(TerrainClassBase terrainClass, float x, float y) => terrainClass.FastNoiseLite?.GetNoise2D(x, y) * 50;
 }

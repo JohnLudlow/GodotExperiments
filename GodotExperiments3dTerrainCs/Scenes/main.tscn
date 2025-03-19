@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://deeld4rnimx4w"]
+[gd_scene load_steps=11 format=3 uid="uid://deeld4rnimx4w"]
 
 [ext_resource type="Script" uid="uid://c0ammqo4wucwu" path="res://Scenes/TerrainGeneration.cs" id="1_2wuc5"]
-[ext_resource type="Texture2D" uid="uid://br10i2fl3gevr" path="res://Assets/Textures/Grass 03 seamless.jpg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dsyieh5vyrf7v" path="res://Scenes/UI/ui.tscn" id="2_b5nbx"]
 [ext_resource type="Script" uid="uid://b1psagrjdn4we" path="res://Scenes/GrassTerrainClass.cs" id="3_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://br10i2fl3gevr" path="res://Assets/Textures/Grass 03 seamless.jpg" id="3_kry3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h7fq0"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,23 +18,18 @@ sky = SubResource("Sky_jyqh2")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1e2v"]
-albedo_color = Color(0.45433, 0.603112, 0.346382, 1)
-albedo_texture = ExtResource("2_8gbba")
-metallic_specular = 0.0
-normal_enabled = true
-subsurf_scatter_strength = 0.3
-subsurf_scatter_skin_mode = true
-subsurf_scatter_texture = ExtResource("2_8gbba")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kry3j"]
+albedo_color = Color(0.399256, 0.455507, 0.199548, 1)
+albedo_texture = ExtResource("3_kry3j")
 uv1_scale = Vector3(10, 10, 10)
-grow_amount = -8.236
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_yeu64"]
-material = SubResource("StandardMaterial3D_t1e2v")
-uv2_padding = 5.0
+[sub_resource type="PlaneMesh" id="PlaneMesh_21xkr"]
+material = SubResource("StandardMaterial3D_kry3j")
 size = Vector2(500, 500)
-subdivide_width = 100
-subdivide_depth = 100
+subdivide_width = 10
+subdivide_depth = 10
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kry3j"]
 
 [node name="Main" type="Node3D"]
 
@@ -47,15 +42,19 @@ shadow_enabled = true
 
 [node name="TerrainGeneration" type="Node" parent="." node_paths=PackedStringArray("InitialMeshInstance", "TerrainClasses")]
 script = ExtResource("1_2wuc5")
-InitialMeshInstance = NodePath("TerrainMesh")
-TerrainClasses = [null]
+InitialMeshInstance = NodePath("MeshInstance3D")
+TerrainClasses = [NodePath("GrassTerrain"), NodePath("GrassTerrain")]
 
-[node name="TerrainMesh" type="MeshInstance3D" parent="TerrainGeneration"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TerrainGeneration"]
 visible = false
-mesh = SubResource("PlaneMesh_yeu64")
+mesh = SubResource("PlaneMesh_21xkr")
+skeleton = NodePath("../..")
 
 [node name="GrassTerrain" type="Node" parent="TerrainGeneration"]
 script = ExtResource("3_jjvhh")
+FastNoiseLite = SubResource("FastNoiseLite_kry3j")
+MinElevation = 0.8
+MaxElevation = 0.3
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.278119, 0.682888, -0.67551, 0.0900363, 0.681626, 0.72614, 0.956317, -0.262774, 0.128089, -250.253, 91.0566, 35.3841)
